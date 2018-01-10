@@ -6,12 +6,14 @@ import Product from './components/Product';
 import Supplier from './components/Supplier';
 
 
-
 //ReactDOM.render(<Main />, document.getElementById('root'));
 ReactDOM.render(
+      <div>
 
       <BrowserRouter>
           <App />
-      </BrowserRouter>,
+      </BrowserRouter>
+      </div>
+      ,
       document.getElementById('root')
   )

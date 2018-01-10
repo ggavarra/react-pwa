@@ -3,8 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" > -->
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap-theme.min.css">
 
     <!-- <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json"> -->
@@ -22,7 +28,7 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ag-grid/10.1.0/ag-grid.js"></script>
-    
+
     <title>React App</title>
   </head>
   <body>
@@ -37,13 +43,13 @@
       To begin the development, run `npm start`.
       To create a production bundle, use `npm run build`.
     -->
-    <!-- <script>
-      // if ('serviceWorker' in navigator) {
-      //   window.addEventListener('load', function() {
-      //     navigator.serviceWorker.register('/service-worker.js');
-      //   });
-      // }
-    </script> -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
+      }
+    </script>
 
   </body>
 </html>

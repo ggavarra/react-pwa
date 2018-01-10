@@ -6,6 +6,7 @@ import Home from './Home';
 import Product from './Product';
 import Supplier from './Supplier';
 import Contact from './Contact';
+import ProductCatalogue from './ProductCatalogue';
 
 class Main extends Component {
     render(){
@@ -16,6 +17,7 @@ class Main extends Component {
               <Route path='/product' component={Product}/>
               <Route path='/supplier' component={Supplier}/>
               <Route path='/contact' component={Contact}/>
+              <Route path='/productCatalogue' component={ProductCatalogue}/>
             </Switch>
           </div>
         );

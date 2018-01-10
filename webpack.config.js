@@ -16,7 +16,7 @@ module.exports = {
     //simplifies creation of HTML files to serve your webpack bundles. This is especially useful for webpack bundles that include a hash in the filename which changes every compilation. You can either let the plugin generate an HTML file for you, supply your own template using lodash templates or use your own loader.
     new HtmlWebpackPlugin({
       title: 'Hot Module Replacement',
-      template: './public/index.html'
+      template: './src/index.html'
     }),
     //Auto replacement of page when i save some file, even css
     new webpack.HotModuleReplacementPlugin()
@@ -42,20 +42,27 @@ module.exports = {
     hot: true
   },
   module: {
-    rules: [
-     {
-       test: /\.css$/, use: ['style-loader', 'css-loader'],
-       include: /flexboxgrid/
-       //Follow instructions at https://github.com/roylee0704/react-flexbox-grid
-     },
+    loaders: [
       {
-        test: /\.(png|svg|jpg|gif|ico)$/,
-        use: ['file-loader']
+        test: /\.jsx?$/,
+        exclude: /(node_modules)/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['react', 'es2015']
+        }
       },
       {
-        test: /\.js|.jsx?$/,
-        exclude: /(node_modules)/,
-        loaders: ["babel-loader"]
-      }]
+        test: /\.css$/,
+        loaders: ['style-loader', 'css-loader?modules=true&camelCase=true']
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loaders: [
+          'file-loader?hash=sha512&digest=hex&name=./images/[name].[ext]',
+          'image-webpack-loader'
+        ]
+
+      }
+    ]
   },
 }
